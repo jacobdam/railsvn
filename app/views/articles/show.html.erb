@@ -1,0 +1,6 @@
+<%= render @article %>
+<div>
+  <%= link_to 'Back to articles', articles_path %> |
+  <%= link_to "Edit", edit_article_path(@article) %> |
+  <%= link_to "Destroy", article_path(@article), :method => :delete, :confirm => 'Do you want to destroy this article' %>
+</div>
