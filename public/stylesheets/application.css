@@ -73,3 +73,20 @@ a {
 .error_messages ul {
   margin: 0;
 }
+
+#top_navigation ul {
+  list-style-type: none;
+  float:right;
+}
+
+#top_navigation li {
+  float: left;
+  padding: 0 5px;
+  border-left: 1px solid #000;
+}
+
+#top_navigation li:first-child {
+  float: left;
+  padding: 0 5px;
+  border-left: none;
+}
