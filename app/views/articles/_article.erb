@@ -1,5 +1,5 @@
 <div class="article">
-  <% unless locals[:no_title].present? %>
+  <% unless local_assigns[:no_title].present? %>
     <h2 class="title"><%= link_to article.title, article_path(article) %></h2>
   <% end %>
   <div class="body">

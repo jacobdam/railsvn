@@ -1,2 +1,3 @@
-<h1>Homes#homepage</h1>
-<p>Find me in app/views/homes/homepage.html.erb</p>
+<% title 'Welcome to RailsVN' %>
+
+<%= render :collection => recent_articles, :partial => 'articles/article' %>
