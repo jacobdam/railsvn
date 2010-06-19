@@ -1,5 +1,7 @@
 <div class="article">
-  <h2 class="title"><%= link_to article.title, article_path(article) %></h2>
+  <% unless locals[:no_title].present? %>
+    <h2 class="title"><%= link_to article.title, article_path(article) %></h2>
+  <% end %>
   <div class="body">
     <%= simple_format(auto_link(h article.body)) %>
   </div>
