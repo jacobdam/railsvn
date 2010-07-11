@@ -1,0 +1,4 @@
+- title 'Articles'
+= render :collection => @articles, :partial => 'article'
+%div
+  = link_to 'New article', new_article_path

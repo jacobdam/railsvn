@@ -1,8 +1,0 @@
-<div class="article">
-  <% unless local_assigns[:no_title].present? %>
-    <h2 class="title"><%= link_to article.title, article_path(article) %></h2>
-  <% end %>
-  <div class="body">
-    <%= simple_format(auto_link(h article.body)) %>
-  </div>
-</div>

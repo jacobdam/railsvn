@@ -3,6 +3,7 @@ source 'http://gemcutter.org'
 gem 'rails', '3.0.0.beta4'
 gem 'formtastic', :git => 'http://github.com/justinfrench/formtastic.git', :branch => 'rails3'
 gem 'devise', :git => "git://github.com/plataformatec/devise.git", :tag => 'v1.1.rc2'
+gem 'haml'
 
 group :production do
   gem 'pg'
