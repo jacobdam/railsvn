@@ -2,7 +2,7 @@ source 'http://gemcutter.org'
 
 gem 'rails', '3.0.0.beta4'
 gem 'formtastic', :git => 'http://github.com/justinfrench/formtastic.git', :branch => 'rails3'
-gem 'devise', :git => "git://github.com/plataformatec/devise.git"
+gem 'devise', :git => "git://github.com/plataformatec/devise.git", :tag => 'v1.1.rc2'
 
 group :production do
   gem 'pg'
@@ -15,6 +15,14 @@ group :development do
 end
 
 group :test do
-  gem 'rspec', '2.0.0.beta.12'
-  gem 'rspec-rails', '2.0.0.beta.12'
+  gem "shoulda", :require => 'shoulda'
+  # gem 'rspec', '2.0.0.beta.13'
+  # gem 'rspec-rails', '2.0.0.beta.13'
+  gem "rspec-rails", :git => "git://github.com/rspec/rspec-rails.git"
+  gem "rspec-core", :git => "git://github.com/rspec/rspec-core.git"
+  gem "rspec-expectations", :git => "git://github.com/rspec/rspec-expectations.git"
+  gem "rspec-mocks", :git => "git://github.com/rspec/rspec-mocks.git"
+  gem "rspec", :git => "git://github.com/rspec/rspec.git"
+  gem 'factory_girl', :git => 'git://github.com/thoughtbot/factory_girl.git', :branch => 'rails3'
+  gem 'faker'
 end
