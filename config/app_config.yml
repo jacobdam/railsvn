@@ -1,0 +1,13 @@
+all: &default_settings 
+
+development:
+  <<: *default_settings
+  domain: lvh.me:3000
+
+test:
+  <<: *default_settings
+  domain: test.host
+
+production:
+  <<: *default_settings
+  domain: railsvn.com
