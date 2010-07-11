@@ -9,16 +9,19 @@ group :production do
   gem 'pg'
 end
 
-group :development do
-  gem 'sqlite3-ruby', :require => 'sqlite3'
-  gem 'nifty-generators'
-  gem 'rails3-generators'
-end
+# do not define group development and test on heroku environment
+if ENV['USER'].nil? || !(ENV['USER'] =~ /^repo/)
+  group :development do
+    gem 'sqlite3-ruby', :require => 'sqlite3'
+    gem 'nifty-generators'
+    gem 'rails3-generators'
+  end
 
-group :test do
-  gem "shoulda", :require => 'shoulda'
-  gem 'rspec', '>=2.0.0.beta.16'
-  gem 'rspec-rails', '>=2.0.0.beta.16'
-  gem 'factory_girl_rails'
-  gem 'faker'
+  group :test do
+    gem "shoulda", :require => 'shoulda'
+    gem 'rspec', '>=2.0.0.beta.16'
+    gem 'rspec-rails', '>=2.0.0.beta.16'
+    gem 'factory_girl_rails'
+    gem 'faker'
+  end
 end
