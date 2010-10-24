@@ -54,21 +54,18 @@ a {
   margin-bottom: 20px;
   background-color: #f0f0f0;
   font-size: 12px; }
-
-.error_messages h2 {
-  text-align: left;
-  font-weight: bold;
-  padding: 5px 10px;
-  font-size: 12px;
-  margin: 0;
-  background-color: #c00;
-  color: #fff; }
-
-.error_messages p {
-  margin: 8px 10px; }
-
-.error_messages ul {
-  margin: 0; }
+  .error_messages h2 {
+    text-align: left;
+    font-weight: bold;
+    padding: 5px 10px;
+    font-size: 12px;
+    margin: 0;
+    background-color: #c00;
+    color: #fff; }
+  .error_messages p {
+    margin: 8px 10px; }
+  .error_messages ul {
+    margin: 0; }
 
 form.simple_form .input {
   margin-top: 10px; }
@@ -82,7 +79,15 @@ form.simple_form .input {
       float: right;
       width: 0;
       color: #F00; }
-  form.simple_form .input input, form.simple_form .input textarea {
+  form.simple_form .input input.string, form.simple_form .input textarea.text {
     width: 300px; }
-  form.simple_form .input textarea {
+  form.simple_form .input textarea.text {
     height: 100px; }
+  form.simple_form .input span.error {
+    display: block;
+    margin-left: 120px;
+    clear: both;
+    padding-left: 20px;
+    background: url("/images/icons/error_log_icon.gif") center left no-repeat; }
+form.simple_form .buttons {
+  padding-left: 120px; }

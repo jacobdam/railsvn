@@ -50,3 +50,17 @@ SimpleForm.setup do |config|
   # Default size for text inputs.
   # config.default_input_size = 50
 end
+
+module SimpleForm::Components::Errors
+  def error_text
+    if errors_on_attribute.present?
+      attribute = object.class.human_attribute_name(attribute_name, :default => attribute_name.to_s.humanize)
+      full_message = I18n.t(:"errors.format", :default => "%{attribute} %{message}", :attribute => attribute,
+                                            :message => errors_on_attribute.first)
+    else
+      full_message = errors_on_association.first
+    end
+
+    full_message
+  end
+end
