@@ -1,4 +1,4 @@
-Railsvn::Application.routes.draw do |map|
+Railsvn::Application.routes.draw do
   constraints(:subdomain => /www/) do
     root :to => "homes#homepage"
     resources :articles

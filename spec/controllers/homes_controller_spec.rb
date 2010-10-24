@@ -2,7 +2,7 @@ require "#{File.dirname(__FILE__)}/../spec_helper"
 
 describe HomesController do
   describe "routing" do
-    it { should route(:get, '/').to(:controller => 'homes', :action => 'homepage') }
+    it { should route(:get, 'http://www.railsvntest.com/').to(:controller => 'homes', :action => 'homepage') }
   end
 
   describe "GET 'homepage'" do

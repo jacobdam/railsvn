@@ -1,7 +1,10 @@
 .bundle
 .sass-cache
+
+nbproject
+.idea
+
 db/*.sqlite3
 log/*.log
 tmp/**/*
-nbproject
 db/schema.rb

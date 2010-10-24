@@ -1,4 +1,4 @@
 .article
   - unless local_assigns[:no_title].present?
     %h2.title= link_to article.title, article_path(article)
-    .body= simple_format(auto_link(h article.body))
+  .body= simple_format(auto_link(h article.body))

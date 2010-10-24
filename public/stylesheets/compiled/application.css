@@ -22,20 +22,29 @@ a {
   border: solid 1px black;
   margin-top: 20px; }
 
-#flash_notice, #flash_error, #flash_alert {
-  padding: 5px 8px;
-  margin: 10px 0; }
+#top_navigation ul {
+  list-style-type: none;
+  float: right; }
+#top_navigation li {
+  float: left;
+  padding: 0 5px;
+  border-left: 1px solid #000; }
+  #top_navigation li:first-child {
+    float: left;
+    padding: 0 5px;
+    border-left: none; }
 
 #flash_notice {
+  padding: 5px 8px;
+  margin: 10px 0;
   background-color: #CFC;
   border: solid 1px #6C6; }
 
 #flash_error, #flash_alert {
+  padding: 5px 8px;
+  margin: 10px 0;
   background-color: #FCC;
   border: solid 1px #C66; }
-
-.fieldWithErrors {
-  display: inline; }
 
 .error_messages {
   width: 400px;
@@ -61,16 +70,19 @@ a {
 .error_messages ul {
   margin: 0; }
 
-#top_navigation ul {
-  list-style-type: none;
-  float: right; }
-
-#top_navigation li {
-  float: left;
-  padding: 0 5px;
-  border-left: 1px solid #000; }
-
-#top_navigation li:first-child {
-  float: left;
-  padding: 0 5px;
-  border-left: none; }
+form.simple_form .input {
+  margin-top: 10px; }
+  form.simple_form .input label {
+    vertical-align: top;
+    margin-right: 20px;
+    display: inline-block;
+    text-align: right;
+    width: 100px; }
+    form.simple_form .input label abbr {
+      float: right;
+      width: 0;
+      color: #F00; }
+  form.simple_form .input input, form.simple_form .input textarea {
+    width: 300px; }
+  form.simple_form .input textarea {
+    height: 100px; }

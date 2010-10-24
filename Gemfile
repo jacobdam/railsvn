@@ -1,8 +1,8 @@
-source 'http://gemcutter.org'
+source :gemcutter
 
-gem 'rails', '3.0.0.beta4'
-gem 'formtastic', :git => 'http://github.com/justinfrench/formtastic.git', :branch => 'rails3'
+gem 'rails', '~>3.0'
 gem 'devise', :git => "git://github.com/plataformatec/devise.git", :tag => 'v1.1.rc2'
+gem 'simple_form'
 gem 'haml'
 
 group :production do
@@ -19,8 +19,8 @@ if ENV['USER'].nil? || !(ENV['USER'] =~ /^repo/)
 
   group :test do
     gem "shoulda", :require => 'shoulda'
-    gem 'rspec', '>=2.0.0.beta.16'
-    gem 'rspec-rails', '>=2.0.0.beta.16'
+    gem 'rspec', '~>2.0'
+    gem 'rspec-rails', '~>2.0'
     gem 'factory_girl_rails'
     gem 'faker'
   end
