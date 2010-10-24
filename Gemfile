@@ -4,6 +4,7 @@ gem 'rails', '~>3.0'
 gem 'devise'
 gem 'simple_form'
 gem 'haml'
+gem 'jquery-rails'
 
 group :production do
   gem 'pg'
@@ -22,3 +23,4 @@ group :test do
   gem 'factory_girl_rails'
   gem 'faker'
 end
+gem "mocha", :group => :test
