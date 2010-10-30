@@ -2,7 +2,7 @@ Railsvn::Application.routes.draw do
   constraints(:subdomain => /www/) do
     root :to => "homes#homepage"
     resources :articles
-    devise_for :users
+    devise_for :users, :controllers => { :sessions => 'sessions'}
   end
 
   match "/", :to => redirect("http://www.#{APP_CONFIG[:domain]}/")

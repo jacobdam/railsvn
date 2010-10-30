@@ -6,3 +6,11 @@
   = link_to "Edit", edit_article_path(@article)
   |
   = link_to "Destroy", article_path(@article), :method => :delete, :confirm => 'Do you want to destroy this article'
+
+- if user_signed_in?
+  abc
+- else
+  %p
+    = link_to 'Sign in', new_user_session_path(:next => request.request_uri)
+    to post comment
+#comments
