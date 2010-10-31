@@ -1,4 +1,6 @@
 class CommentsController < ApplicationController
+  before_filter :authenticate_user!
+
   def new
     @article = Article.find(params[:article_id])
     redirect_to article_path(@article), :alert => 'comment must posted in article'
@@ -17,10 +19,12 @@ class CommentsController < ApplicationController
 
   def edit
     @comment = Comment.find(params[:id])
+    require_admin_or_author!(@comment)
   end
 
   def update
     @comment = Comment.find(params[:id])
+    require_admin_or_author!(@comment)
     if @comment.update_attributes(params[:comment])
       redirect_to article_path(@comment.article), :notice => 'comment updated'
     else
@@ -30,8 +34,14 @@ class CommentsController < ApplicationController
   
   def destroy
     @comment = Comment.find(params[:id])
+    require_admin_or_author!(@comment)
     @comment.destroy
     flash[:notice] = "Successfully destroyed comment."
     redirect_to @comment.article
+  end
+
+private
+  def require_admin_or_author!(comment)
+    unthorized! unless user_signed_in? && (current_user.admin? || comment.author == current_user)
   end
 end

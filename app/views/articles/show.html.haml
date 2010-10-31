@@ -18,4 +18,4 @@
         to post comment
         
   .comments
-    = render @article.comments
+    = render @article.comments.order('created_at desc')
