@@ -3,7 +3,7 @@ class Article < ActiveRecord::Base
 
   attr_accessible :title, :body
 
-  belongs_to :author
+  belongs_to :author, :class_name => 'User'
   has_many :comments, :dependent => :delete_all
 
   validates :title, :presence => true

@@ -13,4 +13,7 @@ class User < ActiveRecord::Base
   validates :password, :presence => { :on => :create },
                        :length => { :within => 6..20, :allow_blank => true },
                        :confirmation => true
+
+  has_many :articles, :foreign_key => :author_id, :dependent => :destroy
+  has_many :comments, :foreign_key => :author_id, :dependent => :delete_all
 end
