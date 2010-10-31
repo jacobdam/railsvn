@@ -6,11 +6,16 @@
   = link_to "Edit", edit_article_path(@article)
   |
   = link_to "Destroy", article_path(@article), :method => :delete, :confirm => 'Do you want to destroy this article'
+#comments-section
+  %a{:name => 'comments'}
 
-- if user_signed_in?
-  abc
-- else
-  %p
-    = link_to 'Sign in', new_user_session_path(:next => request.request_uri)
-    to post comment
-#comments
+  .post-comment-form
+    - if user_signed_in?
+      = render :partial => 'comments/form', :locals => { :article => @article, :comment => Comment.new }
+    - else
+      %p
+        = link_to 'Sign in', new_user_session_path(:next => request.request_uri)
+        to post comment
+        
+  .comments
+    = render @article.comments

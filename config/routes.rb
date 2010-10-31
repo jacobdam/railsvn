@@ -1,7 +1,9 @@
 Railsvn::Application.routes.draw do
   constraints(:subdomain => /www/) do
     root :to => "homes#homepage"
-    resources :articles
+    resources :articles, :shallow => true do
+      resources :comments, :except => [ :index, :new, :show ]
+    end
     devise_for :users, :controllers => { :sessions => 'sessions'}
   end
 
