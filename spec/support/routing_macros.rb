@@ -10,7 +10,11 @@ module RoutingMacros
         actions = [:index, :show, :destroy, :new, :create, :edit, :update]
         actions -= options[:except] if options[:except].present?
       end
-      base_url = options[:base_url] || '' 
+
+      base_url = if options[:base_url] then options[:base_url]
+      elsif options[:host] then "http://#{options[:host]}"
+      elsif options[:subdomain] then "http://#{options[:subdomain]}.example.com"
+      else '' end
 
       it { should route(:get, "#{base_url}/#{prefix}").to(:controller => controller, :action => 'index') } if actions.include?(:index)
       it { should route(:get, "#{base_url}/#{prefix}/123").to(:controller => controller, :action => 'show', :id => '123') } if actions.include?(:show)

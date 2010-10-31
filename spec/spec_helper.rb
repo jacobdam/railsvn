@@ -14,5 +14,6 @@ RSpec.configure do |config|
     controller_group_config.include RoutingMacros
   end
 
+  config.use_transactional_fixtures = true
   config.mock_with :rspec
 end

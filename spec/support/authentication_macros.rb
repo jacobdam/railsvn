@@ -32,7 +32,7 @@ module AuthenticationMacros
           controller.should_receive(action)
           
           get action, params
-          response.should_not redirect_to(new_user_session_path)
+          response.should be_success
         end
       end
     end
