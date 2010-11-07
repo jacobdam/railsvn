@@ -1,4 +1,11 @@
 ENV['RAILS_ENV'] = ENV['RSPEC_RAILS_ENV'] || 'test'
+
+if ENV['RSPEC_RCOV_ENABLED'] && RUBY_VERSION > "1.9"
+  require 'simplecov'
+  SimpleCov.start 'rails'
+  SimpleCov.coverage_dir 'coverage'
+end
+
 require File.expand_path("../../config/environment", __FILE__)
 require 'rspec/rails'
 

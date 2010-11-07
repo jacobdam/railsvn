@@ -21,5 +21,5 @@ group :test do
   gem 'rspec', '~>2.0'
   gem 'rspec-rails', '~>2.0'
   gem 'factory_girl_rails'
-#  gem "mocha", :group => :test
+  gem 'simplecov'
 end
