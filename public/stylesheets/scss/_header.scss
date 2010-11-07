@@ -1,0 +1,44 @@
+#header {
+  height: 90px;
+  background-color:#f7f7f7;
+  @include gradient-background-color(#ffffff, #f0f0f0);
+  border-bottom: 1px solid #CCC;
+
+  #logo {
+    font-style:normal;
+    font-weight:bold;
+
+    float: left;
+  }
+
+  ul.navigation {
+    list-style-type: none;
+    float:right;
+
+    background:#f5f5f5;
+    border:1px solid #e9e9e9;
+    border-bottom-color:#f5f5f5;
+    @include gradient-background-color(#fcfcfc, #ececec);
+    @include rounded-border(5px);
+    @include box-shadow(0, 1px, 1px, rgba(0,0,0,0.2));
+    padding: 10px;
+        
+
+    li {
+      float: left;
+      padding: 0 10px;
+      border-left: 1px solid #DDD;
+      a {
+        color: #4183C4;
+        text-decoration: none;
+      }
+      @include text-shadow(1px, 1px, 0, #FFFFFF);
+
+      &:first-child {
+        float: left;
+        padding: 0 5px;
+        border-left: none;
+      }
+    }
+  }
+}

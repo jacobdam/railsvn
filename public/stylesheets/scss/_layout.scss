@@ -1,50 +1,16 @@
+#header, #site, #footer {
+  .wrapper {
+    width: 960px;
+    margin:0 auto;
+  }
+}
+
 body {
-  background-color: #4B7399;
-  font-family: Verdana, Helvetica, Arial;
-  font-size: 14px;
+  font-family: sans-serif;
 }
 
-a img {
-  border: none;
-}
-
-a {
-  color: #0000FF;
-}
-
-.clear {
-  clear: both;
-  height: 0;
-  overflow: hidden;
-}
-
-#container {
-  width: 75%;
-  margin: 0 auto;
-  background-color: #FFF;
-  padding: 20px 40px;
-  border: solid 1px black;
-  margin-top: 20px;
-}
-
-#top_navigation {
-  ul {
-    list-style-type: none;
-    float:right;
-  }
-
-  li {
-    float: left;
-    padding: 0 5px;
-    border-left: 1px solid #000;
-
-    &:first-child {
-      float: left;
-      padding: 0 5px;
-      border-left: none;
-    }
-  }
-}
+@import 'header';
+@import 'footer';
 
 @mixin flash-message {
   padding: 5px 8px;

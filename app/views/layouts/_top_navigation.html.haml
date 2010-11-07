@@ -1,18 +1,16 @@
-#top_navigation
-  %ul
-    - if user_signed_in?
-      %li
-        Hello
-        = current_user.email
-      %li
-        = link_to 'Logout', destroy_user_session_path
-    - else
-      %li
-        = link_to 'Login', new_user_session_path
-      %li
-        = link_to 'Register', new_user_registration_path
+%ul.navigation
+  - if user_signed_in?
     %li
-      = link_to_unless_current 'Home', root_path
+      Hello
+      = current_user.email
     %li
-      = link_to_unless_current 'Blog', articles_path
-  %br.clear
+      = link_to 'Logout', destroy_user_session_path
+  - else
+    %li
+      = link_to 'Login', new_user_session_path
+    %li
+      = link_to 'Register', new_user_registration_path
+  %li
+    = link_to_unless_current 'Home', root_path
+  %li
+    = link_to_unless_current 'Blog', articles_path

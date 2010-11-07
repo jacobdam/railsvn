@@ -1,4 +1,4 @@
-!!! Strict
+!!! html
 %html{ "xml:lang" => "en", :lang => "en", :xmlns => "http://www.w3.org/1999/xhtml" }
   %head
     %title= yield(:title) || "Untitled"
@@ -7,9 +7,27 @@
     = csrf_meta_tag
     = yield(:head)
   %body
-    #container
-      = render 'layouts/top_navigation'
-      - flash.each do |name, msg|
-        = content_tag :div, msg, :id => "flash_#{name}"
-      = content_tag :h1, yield(:title) if show_title?
-      = yield
+    #header
+      .wrapper
+        %h1#logo RailsVN
+        .navigation-wrapper
+          = render 'layouts/top_navigation'
+    #site
+      .wrapper
+        #content
+          - flash.each do |name, msg|
+            = content_tag :div, msg, :id => "flash_#{name}"
+          = content_tag :h1, yield(:title) if show_title?
+          = yield
+        #side
+    #footer
+      .wrapper
+        .powered
+          %p Thanks to
+          %ul
+            %li
+              = link_to 'http://rubyonrails.org/', :title => 'Ruby on rails' do
+                = image_tag 'rails.png'
+            %li
+              = link_to 'http://heroku.com/', :title => 'Heroku' do
+                = image_tag 'heroku.png'
